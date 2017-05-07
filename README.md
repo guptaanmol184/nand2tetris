@@ -1,8 +1,8 @@
 # nand2tetris
 
 ## nand2tetris Site resources
-+ Nand2tetris website: http://www.nand2tetris.org
-+ Nand2tetris course book (The elements of computing systems): http://nand2tetris.org/book.php
++ nand2tetris website: http://www.nand2tetris.org
++ nand2tetris course book (The elements of computing systems): http://nand2tetris.org/book.php
 + HDL survival guide: http://www.nand2tetris.org/software/HDL%20Survival%20Guide.html
 
 ## nand2tetris on coursera
