@@ -1,4 +1,4 @@
-# nand2tetris
+# Nand2tetris
 
 ## Nand2tetris Site resources
 + Nand2tetris website: http://www.nand2tetris.org
