@@ -10,3 +10,7 @@
 ## nand2tetris on coursera
 + Part 1: https://www.coursera.org/learn/build-a-computer
 + Part 2: https://www.coursera.org/learn/nand2tetris2
+
+## Basic blocks
++ The most fundamental block used for building all the combinational logic is a NAND GATE.
+* The most fundamental block used for building all the sequential logic is a D-FLIP FLOP.
