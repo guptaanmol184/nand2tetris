@@ -42,5 +42,28 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+   	// zero the x input?
+    Mux16(a=x ,b=false ,sel=zx ,out=xBYzx);
+    // negate the x input?
+    Not16(in=xBYzx ,out=NOTxBYzx);
+    Mux16(a=xBYzx ,b=NOTxBYzx ,sel=nx ,out=xBYnx);
+
+    // zero the y input?
+    Mux16(a=y ,b=false ,sel=zy ,out=yBYzy);
+    // negate the y input?
+    Not16(in=yBYzy ,out=NOTyBYzy);
+    Mux16(a=yBYzy ,b=NOTyBYzy ,sel=ny ,out=yBYny);
+
+    // compute out = x + y (if 1) or x & y (if 0)
+    And16(a=xBYnx ,b=yBYny ,out=xANDy);
+    Add16(a=xBYnx ,b=yBYny ,out=xADDy);
+    Mux16(a=xANDy ,b=xADDy ,sel=f ,out=xyBYf);
+
+    // negate the out output?
+    Not16(in=xyBYf ,out=NOTxyBYf);
+    Mux16(a=xyBYf ,b=NOTxyBYf ,sel=no ,out=out ,out[15]=ng ,out[15]=ngTOzr ,out=outTOzr);
+
+    // is the output equal to zero?
+    Add16 (a=outTOzr, b=true, out[15]=iTOzr); // compute (outTOzr + (-1)) and save the 'sign bit'
+    Mux (a=iTOzr, b=false, sel=ngTOzr, out=zr); // zr = ((ng == 1) ? 0 : ((outTOzr + (-1)) < 0) ? 1 : 0))
 }
