@@ -1,5 +1,7 @@
 # nand2tetris
 
+# Project on hold for sometime...
+
 ## nand2tetris site resources
 + nand2tetris website: http://www.nand2tetris.org
 + nand2tetris course book (The elements of computing systems): http://nand2tetris.org/book.php
